@@ -13,7 +13,7 @@
     </div>
 
     <div class="flex justify-center p-6 gap-20 m-10">
-        <img width="250" :src="product?.imageUrl" alt="Product Image">
+        <img width="300" :src="product?.imageUrl" alt="Product Image">
 
         <div class="w-1/3">
             <h1 class="text-2xl mb-3">{{ product?.title }}</h1>
