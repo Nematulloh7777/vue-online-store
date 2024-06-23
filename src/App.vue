@@ -1,5 +1,5 @@
 <template>
-  <Drawer v-if="drawerOpen" :total-price="totalPrice" :vat-price="vatPrice" />
+  <Drawer v-if="drawerOpen" />
 
   <Header :total-price="totalPrice" @open-drawer="openDrawer" />
 
