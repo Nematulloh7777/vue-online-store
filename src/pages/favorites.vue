@@ -1,6 +1,6 @@
 <template>
 
-    <div v-if="!favorites.length" class="flex h-full items-center">
+    <div v-if="!favoritesStore.favorites.length" class="flex h-full items-center">
         <InfoBlock title="Закладок нет :(" description="Вы ничего не добавляли в закладки" imageUrl="/img/emoji-1.png"
             isBtnBack />
     </div>
@@ -21,29 +21,18 @@
         </div>
 
         <div class="mt-10">
-            <CardList :items="favorites" is-favorites />
+            <CardList :items="favoritesStore.favorites" is-favorites />
         </div>
     </div>
 
 </template>
 
 <script setup>
-import axios from 'axios'
-import { onMounted, ref } from 'vue'
+import { useFavoritesStore } from '@/stores/favoritesStore'
 
 import CardList from '../components/card-list.vue'
 import InfoBlock from '../components/info-block.vue'
 
-const favorites = ref([])
+const favoritesStore = useFavoritesStore()
 
-onMounted(async () => {
-    try {
-        const { data } = await axios.get(`https://e3bad24872a7511a.mokky.dev/favorites`)
-
-        favorites.value = data
-
-    } catch (err) {
-        console.log(err)
-    }
-})
 </script>
