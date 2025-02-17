@@ -8,7 +8,7 @@
                 description="Добавьте хотя бы одну таваров, чтобы сделать заказ." imageUrl="/img/package-icon.png" />
             <InfoBlock v-if="cartStore.orderId" title="Заказ оформлен!"
                 :description="`Ваш заказ #${cartStore.orderId} скоро будет передан курьерской доставке`"
-                imageUrl="/img/order-success-icon.png" />
+                imageUrl="/img/order-success-icon.png" :isBtnBack="true" />
         </div>
 
         <div v-else>
