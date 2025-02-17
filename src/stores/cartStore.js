@@ -20,6 +20,11 @@ export const useCartStore = defineStore('cart', () => {
 
       cart.value = []
       orderId.value = data.id
+      if (orderId.value) {
+        setTimeout(() => {
+          orderId.value = null
+        }, 8000)
+      }
     } catch (err) {
       console.log(err)
     } finally {
